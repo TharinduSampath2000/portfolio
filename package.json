@@ -6,6 +6,7 @@
   "homepage": "https://TharinduSampath2000.github.io/portfolio",
   "scripts": {
     "dev": "vite",
+    "build": "vite build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build", 
     "lint": "eslint .",
