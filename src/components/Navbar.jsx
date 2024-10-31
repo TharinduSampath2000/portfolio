@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { styles } from '../style'
 import { navLinks } from '../constants'
-import { favicon, menu, close } from '../assets'
+import { menu, close } from '../assets'
 
 const Navbar = () => {
   const [active, setActive] = useState("")
@@ -21,15 +21,15 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <p className="text-white font-serif text-[19px] font-bold cursor-pointer flex">
+          <p className="text-white font-serif text-[18px] font-bold cursor-pointer flex">
             &lt;
             <span className="text-red-500">Tharindu</span> &nbsp;
-            <span className="sm:block hidden text-secondary">Sampath</span>
+            <span className="md:block hidden text-secondary">Sampath</span>
             /&gt;
           </p>
         </Link>
 
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden md:flex flex-row gap-8">
           {navLinks.map((link) => (
             <li
               key={link.id}
@@ -37,7 +37,7 @@ const Navbar = () => {
                 active === link.title
                   ? "text-red-500 hover:text-red-500"
                   : "text-secondary hover:text-white"
-              } cursor-pointer text-[18px] font-medium`}
+              } cursor-pointer text-[16px] font-medium`}
               onClick={() => {
                 setActive(link.title);
               }}
@@ -47,7 +47,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        <div className="md:hidden flex flex-1 justify-end items-center">
           <img
             src={toggle ? close : menu}
             alt="Menu"
