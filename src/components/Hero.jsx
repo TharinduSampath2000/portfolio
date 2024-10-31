@@ -1,8 +1,36 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion"
 import { styles } from "../style"
 // import { ComputersCanvas } from "./canvas"
 
 const Hero = () => {
+  const fullText = "Hi, I'm Tharindu";
+  const typingSpeed = 100; 
+  const delayBeforeRestart = 2000; 
+
+  const [text, setText] = useState(""); 
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const typingTimeout = setTimeout(() => {
+      if (isDeleting) {
+        setText((prevText) => prevText.slice(0, -1)); 
+        if (text === "") {
+          setIsDeleting(false);
+        }
+      } else {
+        setText((prevText) => fullText.slice(0, prevText.length + 1)); 
+        if (text === fullText) {
+          setTimeout(() => setIsDeleting(true), delayBeforeRestart);
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(typingTimeout); 
+  }, [text, isDeleting]); 
+
+  const displayedText = text || ""; 
+
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
@@ -18,12 +46,20 @@ const Hero = () => {
             className={`${styles.heroHeadText} text-[#e5e5e5]`}
             style={{ textShadow: "-2px -2px 0 #ef4444" }}
           >
-            Hi, I&apos;m{" "}
+            {displayedText
+              .split(" ")
+              .filter((word) => word !== "")
+              .slice(0, 2)
+              .join(" ") || null}{" "}
+            &nbsp;
             <span
               className="text-red-500"
               style={{ textShadow: "-3px -3px 0 #172554" }}
             >
-              Tharindu
+              {displayedText.split(" ").filter((word) => word !== "").length >=
+              3
+                ? displayedText.split(" ")[2]
+                : null}
             </span>
           </h1>
 
