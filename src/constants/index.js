@@ -1,6 +1,5 @@
 import {
   mobile,
-  backend,
   creator,
   web,
   javascript,
@@ -8,18 +7,19 @@ import {
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
   mongodb,
   git,
-  figma,
-  docker,
   police,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
+  springboot,
+  mysql,
+  PostgreSQL,
+  mui,
+  Linux,
+  ims,
+  pgpr,
+  chilaw,
 } from "../assets";
 
 export const navLinks = [
@@ -28,8 +28,12 @@ export const navLinks = [
     title: "About",
   },
   {
-    id: "work",
-    title: "Work",
+    id: "experience",
+    title: "Experience",
+  },
+  {
+    id: "projects",
+    title: "Projects",
   },
   {
     id: "contact",
@@ -39,19 +43,15 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Software Engineer",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Full Stack Developer",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
+    title: "Tech Enthusiast",
     icon: creator,
   },
 ];
@@ -78,36 +78,40 @@ const technologies = [
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
     name: "Node JS",
     icon: nodejs,
+  },
+  {
+    name: "Spring Boot",
+    icon: springboot,
   },
   {
     name: "MongoDB",
     icon: mongodb,
   },
   {
-    name: "Three JS",
-    icon: threejs,
+    name: "MySQL",
+    icon: mysql,
+  },
+  {
+    name: "PostgreSQL",
+    icon: PostgreSQL,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: tailwind,
+  },
+  {
+    name: "Material UI",
+    icon: mui,
   },
   {
     name: "git",
     icon: git,
   },
   {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
+    name: "Linux",
+    icon: Linux,
   },
 ];
 
@@ -156,67 +160,79 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Incident Management System",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A comprehensive Incident Management System for the Sri Lanka Police to efficiently manage and track complaints.",
     tags: [
       {
-        name: "react",
+        name: "ReactJS",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "SpringBoot",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "PostgreSQL",
         color: "pink-text-gradient",
       },
+      {
+        name: "Material UI",
+        color: "orange-text-gradient",
+      },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: ims,
+    source_code_link: "",
   },
   {
-    name: "Job IT",
+    name: "Postgraduate Program Review",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "A web application to make the Postgraduate Program review process, which is conducted under the Quality assurance council of University Grants commission.",
     tags: [
       {
-        name: "react",
+        name: "ReactJS",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "PHP Laravel",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "MySQL",
         color: "pink-text-gradient",
       },
+      {
+        name: "Material UI",
+        color: "orange-text-gradient",
+      },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: pgpr,
+    source_code_link: "",
   },
   {
-    name: "Trip Guide",
+    name: "Website and Online system for Chilaw Pradeshiya sabha",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A website for Chilaw Pradeshiya sabha and web system to manage the complaint system as well as the sabha library.",
     tags: [
       {
-        name: "nextjs",
+        name: "PHP",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "MySQL",
         color: "green-text-gradient",
       },
       {
         name: "css",
         color: "pink-text-gradient",
       },
+      {
+        name: "JavaScript",
+        color: "orange-text-gradient",
+      },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: chilaw,
+    source_code_link: "https://github.com/Pubudu-Anuradha/ChilawSabha.git",
   },
 ];
 
