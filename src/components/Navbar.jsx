@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { styles } from '../style'
 import { navLinks } from '../constants'
@@ -7,6 +7,37 @@ import { menu, close } from '../assets'
 const Navbar = () => {
   const [active, setActive] = useState("")
   const [toggle, setToggle] = useState(false)
+
+  useEffect(() => {
+    const options = {
+      root: null, 
+      threshold: 0.5, 
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    }, options);
+
+    navLinks.forEach((section) => {
+      const target = document.getElementById(section.id);
+      if (target) {
+        observer.observe(target);
+      }
+    });
+
+    return () => {
+      navLinks.forEach((section) => {
+        const target = document.getElementById(section.id);
+        if (target) {
+          observer.unobserve(target);
+        }
+      });
+    };
+  }, []);
 
   return (
     <nav
@@ -34,12 +65,12 @@ const Navbar = () => {
             <li
               key={link.id}
               className={`${
-                active === link.title
+                active === link.id
                   ? "text-red-500 hover:text-red-500"
                   : "text-secondary hover:text-white"
               } cursor-pointer text-[16px] font-medium`}
               onClick={() => {
-                setActive(link.title);
+                setActive(link.id);
               }}
             >
               <a href={`#${link.id}`}>{link.title}</a>
@@ -65,13 +96,13 @@ const Navbar = () => {
                 <li
                   key={link.id}
                   className={`${
-                    active === link.title
+                    active === link.id
                       ? "text-red-500 hover:text-red-500"
                       : "text-secondary hover:text-white"
                   } font-poppins font-medium cursor-pointer text-[16px] hover:text-white`}
                   onClick={() => {
                     setToggle(!toggle);
-                    setActive(link.title);
+                    setActive(link.id);
                   }}
                 >
                   <a href={`#${link.id}`}>{link.title}</a>

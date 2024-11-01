@@ -12,10 +12,10 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, index }
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
-        options={{ 
-          max: 45, 
+        options={{
+          max: 45,
           scale: 1,
-          speed: 450, 
+          speed: 450,
         }}
       >
         <div className="relative w-full h-[230px]">
@@ -25,14 +25,20 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, index }
             className="w-full h-full object-cover rounded-2xl"
           />
 
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
-              <img src={github} alt="github" className="w-1/2 h-1/2 object-contain" />
+          {source_code_link.length > 0 && (
+            <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+              <div
+                onClick={() => window.open(source_code_link, "_blank")}
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              >
+                <img
+                  src={github}
+                  alt="github"
+                  className="w-1/2 h-1/2 object-contain"
+                />
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <div className="mt-5">
@@ -91,5 +97,5 @@ const Works = () => {
   );
 }
 
-const WrappedWorks = SectionWrapper(Works, "");
+const WrappedWorks = SectionWrapper(Works, "projects");
 export default WrappedWorks;

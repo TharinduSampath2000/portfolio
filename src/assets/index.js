@@ -1,6 +1,5 @@
 import logo from "./logo.svg";
 import favicon from "./favicon.png";
-import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
@@ -21,16 +20,20 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import Linux from "./tech/Linux.png";
+import mui from "./tech/mui.png";
+import mysql from "./tech/mysql.png";
+import springboot from "./tech/springboot.png";
+import PostgreSQL from "./tech/PostgreSQL.png";
 
 import police from "./company/police.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import chilaw from "./chilaw.png";
+import ims from "./ims.png";
+import pgpr from "./pgpr.png";
 
 export {
   logo,
-  backend,
   creator,
   mobile,
   web,
@@ -51,8 +54,13 @@ export {
   typescript,
   threejs,
   police,
-  carrent,
-  jobit,
-  tripguide,
+  Linux,
+  mui,
+  mysql,
+  springboot,
+  PostgreSQL,
+  chilaw,
+  ims,
+  pgpr,
   favicon
 };
