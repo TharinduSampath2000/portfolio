@@ -20,6 +20,7 @@ import {
   ims,
   pgpr,
   chilaw,
+  storeIt,
 } from "../assets";
 
 export const navLinks = [
@@ -183,6 +184,7 @@ const projects = [
     ],
     image: ims,
     source_code_link: "",
+    site_link: "",
   },
   {
     name: "Postgraduate Program Review",
@@ -208,6 +210,7 @@ const projects = [
     ],
     image: pgpr,
     source_code_link: "",
+    site_link: "",
   },
   {
     name: "Website and Online system for Chilaw Pradeshiya sabha",
@@ -233,6 +236,29 @@ const projects = [
     ],
     image: chilaw,
     source_code_link: "https://github.com/Pubudu-Anuradha/ChilawSabha.git",
+    site_link: "",
+  },
+  {
+    name: "StoreIt",
+    description:
+      "A web application to manage files in our own storage efficiently and securely.",
+    tags: [
+      {
+        name: "NextJS",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Appwrite",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Tailwind CSS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: storeIt,
+    source_code_link: "https://github.com/TharinduSampath2000/StoreIt.git",
+    site_link: "https://store-it-one.vercel.app/",
   },
 ];
 

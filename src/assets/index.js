@@ -31,8 +31,11 @@ import police from "./company/police.png";
 import chilaw from "./chilaw.png";
 import ims from "./ims.png";
 import pgpr from "./pgpr.png";
+import storeIt from "./storeIt.png";
+import link from "./link.png";
 
 export {
+  link,
   logo,
   creator,
   mobile,
@@ -62,5 +65,6 @@ export {
   chilaw,
   ims,
   pgpr,
+  storeIt,
   favicon
 };

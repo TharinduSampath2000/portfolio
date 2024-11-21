@@ -2,12 +2,12 @@ import { Tilt } from "react-tilt"
 import { motion } from 'framer-motion'
 import PropTypes from 'prop-types';
 import { styles } from "../style"
-import { github } from '../assets'
+import { github, link } from '../assets'
 import { SectionWrapper } from "./hoc"
 import { projects } from "../constants"
 import { fadeIn, textVariant } from "../utils/motion"
 
-const ProjectCard = ({ name, description, tags, image, source_code_link, index }) => {
+const ProjectCard = ({ name, description, tags, image, source_code_link, site_link, index }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -25,8 +25,8 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, index }
             className="w-full h-full object-cover rounded-2xl"
           />
 
-          {source_code_link.length > 0 && (
-            <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+          <div className="absolute inset-0 flex flex-col justify-start items-end m-3 gap-2 card-img_hover">
+            {source_code_link.length > 0 && (
               <div
                 onClick={() => window.open(source_code_link, "_blank")}
                 className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
@@ -37,8 +37,21 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, index }
                   className="w-1/2 h-1/2 object-contain"
                 />
               </div>
-            </div>
-          )}
+            )}
+
+            {site_link.length > 0 && (
+              <div
+                onClick={() => window.open(site_link, "_blank")}
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              >
+                <img
+                  src={link}
+                  alt="link"
+                  className="w-1/2 h-1/2 object-contain"
+                />
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="mt-5">
@@ -64,6 +77,7 @@ ProjectCard.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.object).isRequired,
   image: PropTypes.string.isRequired,
   source_code_link: PropTypes.string.isRequired,
+  site_link: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
 };
 
