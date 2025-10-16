@@ -27,6 +27,7 @@ import springboot from "./tech/springboot.png";
 import PostgreSQL from "./tech/PostgreSQL.png";
 
 import police from "./company/police.png";
+import jwa from "./company/jwa.png";
 
 import chilaw from "./chilaw.png";
 import ims from "./ims.png";
@@ -57,6 +58,7 @@ export {
   typescript,
   threejs,
   police,
+  jwa,
   Linux,
   mui,
   mysql,
