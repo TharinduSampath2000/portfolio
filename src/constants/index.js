@@ -21,6 +21,7 @@ import {
   pgpr,
   chilaw,
   storeIt,
+  jwa,
 } from "../assets";
 
 export const navLinks = [
@@ -118,16 +119,64 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Intern Software Engineer",
+    company_name: "JWare Automation (pvt) Ltd",
+    icon: jwa,
+    iconBg: "#ffe4e1",
+    date: "December 2024 - present",
+    roles: [
+      {
+        title: "Associate Software Engineer",
+        date: "July 2025 - Present",
+        points: [
+          "Developed a court management platform with reservation scheduling, member engagement, and real-time light control.",
+          "Utilized Home Assistant OS, MQTT, WebSockets, and Socket.IO for seamless real-time operations.",
+          "Integrated Playtomic and Syltek APIs for enhanced booking and match functionality.",
+          "Enabled secure payments with Stripe API.",
+          "Implemented WhatsApp signup, email notifications, and match boosting features.",
+          "Improved booking efficiency by 30%, increased player participation by 25%, and reduced manual lighting operations by 90%.",
+          "Currently overseeing 2 trainee-led teams as an associate, providing guidance, mentorship, and technical support.",
+        ],
+      },
+      {
+        title: "Trainee Software Engineer",
+        date: "May 2025 - July 2025",
+        points: [
+          "Contributed to the development of an AI-powered chatbot integration to enhance user interaction with intelligent conversational features.",
+          "Implemented CRUD operations for function and parameter management to enable dynamic chatbot behavior.",
+          "Developed secure authentication and authorization using JWT tokens for protected access and data security.",
+          "Led a team of 2 interns during my trainee period, managing development tasks and ensuring timely delivery.",
+        ],
+      },
+      {
+        title: "Intern Software Engineer",
+        date: "December 2024 - May 2025",
+        points: [
+          "Contributed to the development of a customizable dashboard solution for industrial workspaces.",
+          "Integrated real-time data from MQTT brokers and InfluxDB for efficient monitoring.",
+          "Implemented interactive drag-and-drop widgets and dynamic settings for enhanced user control.",
+          "Built real-time alarm notifications, reducing monitoring response time by 40%.",
+          "Integrated Stripe API for secure payment processing.",
+          "Enabled fully automated billing workflows, achieving 100% payment automation.",
+        ],
+      },
+    ],
+  },
+  {
     company_name: "Sri Lanka Police - IT Division",
     icon: police,
     iconBg: "#ffe4e1",
     date: "January 2024 - June 2024",
-    points: [
-      "Developed an Incident Management System to streamline complaint management for the Sri Lanka Police, improving case tracking and response times.",
-      "Enhanced case follow-up capabilities for higher-ranking officers, enabling better oversight and progress monitoring on investigations.",
-      "Optimized communication channels between complainants and police officers, ensuring efficient and transparent handling of complaints.",
-      "Utilized software development skills to contribute to a real-world project, improving law enforcement processes and operations through technology.",
+    roles: [
+      {
+        title: "Intern Software Engineer",
+        date: "January 2024 - June 2024",
+        points: [
+          "Developed an Incident Management System to streamline complaint management for the Sri Lanka Police, improving case tracking and response times.",
+          "Enhanced case follow-up capabilities for higher-ranking officers, enabling better oversight and progress monitoring on investigations.",
+          "Optimized communication channels between complainants and police officers, ensuring efficient and transparent handling of complaints.",
+          "Utilized software development skills to contribute to a real-world project, improving law enforcement processes and operations through technology.",
+        ],
+      },
     ],
   },
 ];

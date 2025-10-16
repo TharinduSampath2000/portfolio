@@ -25,19 +25,33 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
-        <p className="text-secondary text-[16px] font-semibold" style={{ margin: 0 }}>{experience.company_name}</p>
+        <h3 className="text-white text-[24px] font-bold">
+          {experience.company_name}
+        </h3>
       </div>
 
-      <ul className="mt-5 list-disc ml-5 space-y-2">
-        {experience.points.map((detail, index) => (
-          <li 
-            key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider">
-              {detail}
-            </li>
+      <div className="mt-5 space-y-6">
+        {experience.roles.map((role, roleIndex) => (
+          <div key={roleIndex}>
+            <h4 className="text-secondary text-[18px] font-semibold">
+              {role.title}
+            </h4>
+            {role.date && (
+              <p className="text-gray-400 text-[14px] italic">{role.date}</p>
+            )}
+            <ul className="mt-2 list-disc ml-5 space-y-2">
+              {role.points.map((detail, index) => (
+                <li
+                  key={`experience-point-${roleIndex}-${index}`}
+                  className="text-white-100 text-[14px] pl-1 tracking-wider"
+                >
+                  {detail}
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </VerticalTimelineElement>
   );
 }
@@ -48,10 +62,16 @@ ExperienceCard.propTypes = {
     iconBg: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired,
     company_name: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    points: PropTypes.arrayOf(PropTypes.string).isRequired,
+    roles: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        date: PropTypes.string,
+        points: PropTypes.arrayOf(PropTypes.string).isRequired,
+      })
+    ).isRequired,
   }).isRequired,
 };
+
 
 const Experience = () => {
   return (
